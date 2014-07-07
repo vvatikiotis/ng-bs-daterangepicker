@@ -22,6 +22,7 @@ angular.module('ngBootstrap', []).directive('input', function ($compile, $parse)
 			options.ranges = $attributes.ranges && $parse($attributes.ranges)($scope);
 			options.locale = $attributes.locale && $parse($attributes.locale)($scope);
 			options.opens = $attributes.opens && $parse($attributes.opens)($scope);
+			options.timePicker = $attributes.timePicker || false;
 
 			function format(date) {
 				return date.format(options.format);
@@ -55,6 +56,7 @@ angular.module('ngBootstrap', []).directive('input', function ($compile, $parse)
 				$element.data('daterangepicker').updateView();
 				$element.data('daterangepicker').updateCalendars();
 				$element.data('daterangepicker').updateInputText();
+				$element.data('daterangepicker').timePicker = modelValue.timePicker;
 			});
 
 			$element.daterangepicker(options, function(start, end) {
@@ -62,7 +64,7 @@ angular.module('ngBootstrap', []).directive('input', function ($compile, $parse)
 					ngModel.$setViewValue({ startDate: start, endDate: end });
 					ngModel.$render();
 				});
-			});			
+			});
 		}
 	};
 });
