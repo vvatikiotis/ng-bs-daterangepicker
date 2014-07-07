@@ -22,7 +22,28 @@ angular.module('ngBootstrap', []).directive('input', function ($compile, $parse)
 			options.ranges = $attributes.ranges && $parse($attributes.ranges)($scope);
 			options.locale = $attributes.locale && $parse($attributes.locale)($scope);
 			options.opens = $attributes.opens && $parse($attributes.opens)($scope);
-			options.timePicker = $attributes.timePicker || false;
+			if ($attributes.timePicker == "true") {
+				options.timePicker = true;
+			}
+			options.timePickerIncrement = $attributes.timePickerIncrement || 30;
+			if ($attributes.timePicker12Hour == "false") {
+				options.timePicker12Hour = false;
+			}
+			if ($attributes.singleDatePicker == "true") {
+				options.singleDatePicker = true;
+			}
+			if ($attributes.dateLimit == "true") {
+				options.dateLimit = true;
+			}
+			if ($attributes.showDropdowns == "true") {
+				options.showDropdowns = true;
+			}
+			if ($attributes.showWeekNumbers == "true") {
+				options.showWeekNumbers = true;
+			}
+			options.buttonClasses = $attributes.buttonClasses || ['btn', 'btn-small'];
+			options.applyClass = $attributes.applyClass || 'btn-success';
+			options.cancelClass = $attributes.cancelClass || 'btn-default';
 
 			function format(date) {
 				return date.format(options.format);
@@ -56,7 +77,6 @@ angular.module('ngBootstrap', []).directive('input', function ($compile, $parse)
 				$element.data('daterangepicker').updateView();
 				$element.data('daterangepicker').updateCalendars();
 				$element.data('daterangepicker').updateInputText();
-				$element.data('daterangepicker').timePicker = modelValue.timePicker;
 			});
 
 			$element.daterangepicker(options, function(start, end) {

@@ -76,7 +76,17 @@ Example with all above features:
 	limit="3 days"
 	format="L"
 	separator="/"
-	ranges="{'Special Range':{'startDate': '2013-09-2', 'endDate': '2013-09-5'}}">
+	ranges="{'Special Range':{'startDate': '2013-09-2', 'endDate': '2013-09-5'}}"
+  time-picker="/"
+  time-picker-increment="/"
+  time-picker-12-hour="/"
+  single-date-picker="true"
+  date-limit="true"
+  show-dropdowns="true"
+  show-week-numbers="true"
+  button-classes="new-class"
+  apply-class="new-class"
+  cancel-class="new-class">
 ```
 
 The `limit` attribute lets you specify a number and unit similarly as you would invoke `moment.duration()`.
@@ -85,7 +95,7 @@ The `limit` attribute lets you specify a number and unit similarly as you would 
 
 * `timePicker*`
 * `show*`
-* other formatting options like `*Class` and stuff 
+* other formatting options like `*Class` and stuff
 
 ### Build
 
