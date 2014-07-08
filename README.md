@@ -64,6 +64,16 @@ The result object `$scope.myDateRange` has a `startDate` and `endDate` propertie
 * `format`: mapped from `format` attribute;
 * `separator`: mapped from `separator` attribute.
 * `ranges`: mapped from `ranges` attribute. Can be a JSON string or scoped object. (check daterangepicker for formatting)
+* `timePicker`: mapped from `time-picker` attribute.
+* `timePickerIncrement`: mapped from `time-picker-increment` attribute.
+* `timePicker12Hour`: mapped from `time-picker-12-hour` attribute.
+* `singleDatePicker`: mapped from `single-date-picker` attribute.
+* `dateLimit`: mapped from `date-limit` attribute.
+* `showDropdowns`: mapped from `show-dropdowns` attribute.
+* `showWeekNumbers`: mapped from `show-week-numbers` attribute.
+* `buttonClasses`: mapped from `button-classes` attribute.
+* `applyClass`: mapped from `apply-class` attribute.
+* `cancelClass`: mapped from `cancel-class` attribute.
 
 Example with all above features:
 
@@ -77,16 +87,16 @@ Example with all above features:
 	format="L"
 	separator="/"
 	ranges="{'Special Range':{'startDate': '2013-09-2', 'endDate': '2013-09-5'}}"
-  time-picker="/"
-  time-picker-increment="/"
-  time-picker-12-hour="/"
-  single-date-picker="true"
-  date-limit="true"
-  show-dropdowns="true"
-  show-week-numbers="true"
-  button-classes="new-class"
-  apply-class="new-class"
-  cancel-class="new-class">
+	time-picker="/"
+	time-picker-increment="/"
+	time-picker-12-hour="/"
+	single-date-picker="true"
+	date-limit="true"
+	show-dropdowns="true"
+	show-week-numbers="true"
+	button-classes="new-class"
+	apply-class="new-class"
+	cancel-class="new-class">
 ```
 
 The `limit` attribute lets you specify a number and unit similarly as you would invoke `moment.duration()`.
