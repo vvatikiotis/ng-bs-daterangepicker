@@ -72,11 +72,15 @@ angular.module('ngBootstrap', []).directive('input', function ($compile, $parse)
 					ngModel.$setViewValue({ startDate: moment().startOf('day'), endDate: moment().startOf('day') });
 					return;
 				}
-				$element.data('daterangepicker').startDate = modelValue.startDate;
-				$element.data('daterangepicker').endDate = modelValue.endDate;
-				$element.data('daterangepicker').updateView();
-				$element.data('daterangepicker').updateCalendars();
-				$element.data('daterangepicker').updateInputText();
+
+				if ($element.data('daterangepicker')){
+					$element.data('daterangepicker').startDate = modelValue.startDate;
+					$element.data('daterangepicker').endDate = modelValue.endDate;
+					$element.data('daterangepicker').updateView();
+					$element.data('daterangepicker').updateCalendars();
+					$element.data('daterangepicker').updateInputText();
+				}
+			
 			});
 
 			$element.daterangepicker(options, function(start, end) {
