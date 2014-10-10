@@ -14,7 +14,7 @@ angular.module('ngBootstrap', []).directive('input', function ($compile, $parse)
 			if ($attributes.type !== 'daterange' || ngModel === null ) return;
 
 			var options = {};
-			options.format = $attributes.format || 'YYYY-MM-DD';
+			options.format = $attributes.format || 'YYYY-MM-DD HH:mm';
 			options.separator = $attributes.separator || ' - ';
 			options.minDate = $attributes.minDate && moment($attributes.minDate);
 			options.maxDate = $attributes.maxDate && moment($attributes.maxDate);
