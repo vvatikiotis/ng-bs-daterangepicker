@@ -69,7 +69,7 @@ angular.module('ngBootstrap', []).directive('input', function ($compile, $parse)
 
 			$scope.$watch($attributes.ngModel, function (modelValue) {
 				if (!modelValue || (!modelValue.startDate)) {
-					ngModel.$setViewValue({ startDate: moment().startOf('day'), endDate: moment().startOf('day') });
+					ngModel.$setViewValue({ startDate: moment().startOf('day'), endDate: moment().endOf('day') });
 					return;
 				}
 
