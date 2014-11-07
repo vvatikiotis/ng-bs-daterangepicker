@@ -6,7 +6,7 @@
 (function (angular) {
 'use strict';
 
-angular.module('ngBootstrap', []).directive('input', function ($compile, $parse) {
+angular.module('ngBootstrap', []).directive('input', ['$compile', '$parse', function ($compile, $parse) {
 	return {
 		restrict: 'E',
 		require: '?ngModel',
@@ -91,6 +91,6 @@ angular.module('ngBootstrap', []).directive('input', function ($compile, $parse)
 			});
 		}
 	};
-});
+}]);
 
 })(angular);
