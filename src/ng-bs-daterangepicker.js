@@ -39,6 +39,8 @@
                     options.singleDatePickerFocus = "start";
                 } else if ($attributes.singleDatePickerFocus == "end") {
                     options.singleDatePickerFocus = "end";
+                } else {
+                    options.singleDatePickerFocus = undefined;
                 }
 
                 if ($attributes.dateLimit == "true") {
@@ -53,6 +55,14 @@
                 options.buttonClasses = $attributes.buttonClasses || ['btn', 'btn-small'];
                 options.applyClass = $attributes.applyClass || 'btn-success';
                 options.cancelClass = $attributes.cancelClass || 'btn-default';
+
+                function isStartDateFocused() {
+                    return options.singleDatePickerFocus && options.singleDatePickerFocus === 'start';
+                }
+
+                function isEndDateFocused() {
+                    return options.singleDatePickerFocus && options.singleDatePickerFocus === 'end';
+                }
 
                 function format(date) {
                     return date.format(options.format);
@@ -82,9 +92,16 @@
                         return;
                     }
 
+                    console.log('*************');
+                    console.dir(modelValue);
+                    console.dir(isStartDateFocused());
+                    console.dir(isEndDateFocused());
+                    console.log('*************');
+
                     if ($element.data('daterangepicker')) {
                         $element.data('daterangepicker').startDate = modelValue.startDate;
                         $element.data('daterangepicker').endDate = modelValue.endDate;
+
                         $element.data('daterangepicker').updateView();
                         $element.data('daterangepicker').updateCalendars();
                         $element.data('daterangepicker').updateInputText();
