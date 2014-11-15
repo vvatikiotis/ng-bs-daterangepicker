@@ -1,5 +1,5 @@
 /**
- * @license ng-bs-daterangepicker v0.0.9
+ * @license ng-bs-daterangepicker v0.0.11
  * (c) 2013 Luis Farzati http://github.com/luisfarzati/ng-bs-daterangepicker
  * License: MIT
  */
@@ -91,12 +91,6 @@
                         ngModel.$setViewValue({startDate: moment().startOf('day'), endDate: moment().endOf('day')});
                         return;
                     }
-
-                    console.log('*************');
-                    console.dir(modelValue);
-                    console.dir(isStartDateFocused());
-                    console.dir(isEndDateFocused());
-                    console.log('*************');
 
                     if ($element.data('daterangepicker')) {
                         $element.data('daterangepicker').startDate = modelValue.startDate;
